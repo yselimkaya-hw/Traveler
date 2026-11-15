@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_trip_card.xml - Gezi Kartı Item Layout
+    
+    RecyclerView'daki her gezi için MaterialCardView ile gösterilir.
+    Tıklanabilir yüzey efekti ve yuvarlatılmış köşeler içerir.
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@color/bg_card"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/card_stroke"
+    app:strokeWidth="1dp"
+    app:rippleColor="@color/ripple_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Sol: Şehir baş harfi - renkli daire ikon -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            app:cardBackgroundColor="@color/accent_orange_alpha"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/tv_city_initial"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="İ"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/accent_orange" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Sağ: Gezi bilgileri -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp"
+            android:layout_gravity="center_vertical">
+
+            <!-- Gezi başlığı -->
+            <TextView
+                android:id="@+id/tv_trip_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="İstanbul Turu"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:maxLines="1"
+                android:ellipsize="end" />
+
+            <!-- Şehir adı -->
+            <TextView
+                android:id="@+id/tv_trip_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="📍 İstanbul"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary" />
+
+            <!-- Tarih aralığı -->
+            <TextView
+                android:id="@+id/tv_trip_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="2024-06-01 → 2024-06-05"
+                android:textSize="12sp"
+                android:textColor="@color/text_hint" />
+
+        </LinearLayout>
+
+        <!-- En sağ: Durum badge'i -->
+        <TextView
+            android:id="@+id/tv_status_badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Planlandı"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

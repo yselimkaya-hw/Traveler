@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    fragment_onboarding.xml - Karşılama Ekranı Layout
+    
+    Modern, tam ekran karşılama ekranı. Kullanıcıdan isim alır.
+    Gradient arka plan, büyük başlık, isim alanı ve "Başla" butonu içerir.
+-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="100dp"
+        android:padding="32dp">
+
+        <!-- Uygulama logosu/ikonu -->
+        <TextView
+            android:id="@+id/tv_app_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✈️"
+            android:textSize="64sp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Ana başlık -->
+        <TextView
+            android:id="@+id/tv_onboarding_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Maceraya\nHazır mısın?"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:lineSpacingMultiplier="1.1"
+            app:layout_constraintTop_toBottomOf="@id/tv_app_icon"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Alt başlık -->
+        <TextView
+            android:id="@+id/tv_onboarding_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Hayalindeki gezileri planla, rotaları yönet ve anıları kaydet."
+            android:textSize="16sp"
+            android:textColor="@color/text_secondary"
+            android:lineSpacingMultiplier="1.4"
+            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_title"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Vurgu noktaları -->
+        <LinearLayout
+            android:id="@+id/layout_features"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_subtitle"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="🗺️  AI destekli rota planlama"
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="📍  Durak ve rota takibi"
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📊  Gezi istatistikleri"
+                android:textSize="15sp"
+                android:textColor="@color/text_secondary" />
+        </LinearLayout>
+
+        <!-- İsim girdi alanı -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:hint="Adın nedir?"
+            app:hintTextColor="@color/text_hint"
+            app:boxBackgroundColor="@color/bg_card"
+            app:boxStrokeColor="@color/accent_orange"
+            app:boxStrokeWidth="2dp"
+            app:boxCornerRadiusTopStart="14dp"
+            app:boxCornerRadiusTopEnd="14dp"
+            app:boxCornerRadiusBottomStart="14dp"
+            app:boxCornerRadiusBottomEnd="14dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:layout_constraintTop_toBottomOf="@id/layout_features"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:inputType="textPersonName|textCapWords"
+                android:imeOptions="actionDone"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Başla butonu -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:text="Başla"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/bg_primary"
+            app:backgroundTint="@color/accent_orange"
+            app:cornerRadius="14dp"
+            app:layout_constraintTop_toBottomOf="@id/til_user_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Alt not -->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

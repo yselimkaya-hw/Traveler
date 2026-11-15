@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    strings.xml - Uygulama Metin Kaynakları
+    
+    Tüm kullanıcıya gösterilen metinler burada tanımlanır.
+    Lokalizasyon (çoklu dil desteği) için bu yaklaşım zorunludur.
+    İleride İngilizce eklemek için values-en/strings.xml oluşturulabilir.
+-->
+<resources>
+
+    <!-- Uygulama adı -->
+    <string name="app_name">Traveler</string>
+
+    <!-- ===== ONBOARDING ===== -->
+    <string name="onboarding_title">Maceraya\nHazır mısın?</string>
+    <string name="onboarding_subtitle">Hayalindeki gezileri planla, rotaları yönet ve anıları kaydet.</string>
+    <string name="onboarding_name_hint">Adın nedir?</string>
+    <string name="onboarding_name_label">İsmin</string>
+    <string name="onboarding_button">Başla →</string>
+    <string name="onboarding_name_empty_error">Lütfen adınızı girin</string>
+    <string name="onboarding_welcome_toast">Hoş geldin, %s! 🎉</string>
+
+    <!-- ===== DASHBOARD ===== -->
+    <string name="dashboard_title">Gezilerim</string>
+    <string name="dashboard_welcome_prefix">Merhaba, </string>
+    <string name="dashboard_empty_title">Henüz bir gezi eklenmedi</string>
+    <string name="dashboard_empty_subtitle">Sağ alttaki + butonuna basarak\nilk gezini planlamaya başla!</string>
+    <string name="dashboard_fab_label">Gezi Ekle</string>
+    <string name="dashboard_trips_count_suffix"> Gezi</string>
+
+    <!-- ===== GEZİ EKLEME ===== -->
+    <string name="add_trip_title">Yeni Gezi</string>
+    <string name="add_trip_city_hint">Şehir adı giriniz</string>
+    <string name="add_trip_city_label">Hedef Şehir</string>
+    <string name="add_trip_trip_title_hint">Gezi başlığı (örn: İstanbul Turu)</string>
+    <string name="add_trip_trip_title_label">Gezi Başlığı</string>
+    <string name="add_trip_start_date_hint">Başlangıç tarihi</string>
+    <string name="add_trip_end_date_hint">Bitiş tarihi</string>
+    <string name="add_trip_description_hint">Notlar (isteğe bağlı)</string>
+    <string name="add_trip_ai_switch_label">Gemini AI ile Planla</string>
+    <string name="add_trip_stop1_hint">1. Durak</string>
+    <string name="add_trip_stop2_hint">2. Durak</string>
+    <string name="add_trip_stop3_hint">3. Durak</string>
+    <string name="add_trip_save_button">Geziyi Kaydet</string>
+    <string name="add_trip_ai_loading">AI rota oluşturuluyor…</string>
+    <string name="add_trip_saved_success">Gezi kaydedildi! ✓</string>
+    <string name="add_trip_saved_notification_title">Yeni Gezi Eklendi!</string>
+    <string name="add_trip_saved_notification_text">%s gezin başarıyla planlandı.</string>
+    <string name="add_trip_city_required">Lütfen bir şehir girin</string>
+    <string name="add_trip_title_required">Lütfen gezi başlığı girin</string>
+
+    <!-- ===== GEZİ DETAYLARI ===== -->
+    <string name="trip_details_title">Gezi Detayı</string>
+    <string name="trip_details_stops_header">Rota Durakları</string>
+    <string name="trip_details_complete_button">Geziyi Tamamla</string>
+    <string name="trip_details_completed_toast">Tebrikler! Gezi tamamlandı 🎉</string>
+    <string name="trip_details_stop_visited_toast">Durak ziyaret edildi olarak işaretlendi ✓</string>
+
+    <!-- ===== AYARLAR ===== -->
+    <string name="settings_title">Ayarlar ve İstatistikler</string>
+    <string name="settings_dark_mode_label">Koyu Tema</string>
+    <string name="settings_stats_header">İstatistikler</string>
+    <string name="settings_total_trips">Toplam Gezi</string>
+    <string name="settings_completed_trips">Tamamlanan</string>
+    <string name="settings_version">Versiyon 1.0</string>
+    <string name="settings_about">Traveler - Gezi Planlama Uygulaması</string>
+
+    <!-- ===== GENEL MESAJLAR ===== -->
+    <string name="delete_confirm_title">Geziyi Sil</string>
+    <string name="delete_confirm_message">\"%s\" gezisini silmek istediğinizden emin misiniz?</string>
+    <string name="delete_confirm_yes">Evet, Sil</string>
+    <string name="delete_confirm_no">İptal</string>
+    <string name="delete_success_toast">Gezi silindi ✓</string>
+    <string name="delete_error_toast">Silme işlemi başarısız</string>
+    <string name="error_general">Bir hata oluştu. Lütfen tekrar deneyin.</string>
+    <string name="loading">Yükleniyor…</string>
+
+    <!-- ===== ERİŞİLEBİLİRLİK (Content Description) ===== -->
+    <string name="cd_settings_button">Ayarlar</string>
+    <string name="cd_add_trip_button">Yeni gezi ekle</string>
+    <string name="cd_back_button">Geri</string>
+
+</resources>

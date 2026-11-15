@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    fragment_trip_details.xml
+    Seçilen gezinin başlık/tarih bilgilerini ve rota duraklarını listeleyen ekran.
+    TripDetailsFragment tarafından kullanılır; ViewBinding etkin.
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <!-- ── Üst Araç Çubuğu ──────────────────────────────────────── -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_primary"
+        app:elevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="8dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="8dp">
+
+            <!-- Geri dön butonu -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBack"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="← Geri"
+                android:textColor="@color/accent_orange"
+                android:fontFamily="@font/inter_semi_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <!-- Ekran başlığı -->
+            <TextView
+                android:id="@+id/tvToolbarTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Gezi Detayı"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:fontFamily="@font/inter_bold"
+                android:gravity="center"
+                app:layout_constraintStart_toEndOf="@id/btnBack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Alt ayırıcı çizgi -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/stroke_subtle" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ── İçerik Alanı ──────────────────────────────────────────── -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="180dp">
+
+            <!-- ── Gezi Bilgileri Kartı ──────────────────────────── -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp"
+                app:strokeColor="@color/accent_orange"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Gezi başlığı -->
+                    <TextView
+                        android:id="@+id/tvTripTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_bold"
+                        android:textColor="@color/text_primary"
+                        android:textSize="22sp"
+                        tools:text="İstanbul Kültür Turu" />
+
+                    <!-- Şehir adı -->
+                    <TextView
+                        android:id="@+id/tvTripCity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:drawablePadding="4dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/accent_orange"
+                        android:textSize="15sp"
+                        tools:text="📍 İstanbul" />
+
+                    <!-- Tarih aralığı -->
+                    <TextView
+                        android:id="@+id/tvTripDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp"
+                        tools:text="📅 01.06.2025 — 05.06.2025" />
+
+                    <!-- Açıklama (opsiyonel) -->
+                    <TextView
+                        android:id="@+id/tvTripDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        android:visibility="gone"
+                        tools:text="Tarihi yarımadanın önemli noktalarını kapsayan 5 günlük kültür turu."
+                        tools:visibility="visible" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+<!--            &lt;!&ndash; ── İlerleme Özeti ────────────────────────────────── &ndash;&gt;-->
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="16dp"-->
+<!--                android:layout_marginVertical="8dp"-->
+<!--                app:cardBackgroundColor="@color/bg_card"-->
+<!--                app:cardCornerRadius="16dp"-->
+<!--                app:cardElevation="2dp"-->
+<!--                app:strokeColor="@color/stroke_subtle"-->
+<!--                app:strokeWidth="1dp">-->
+
+<!--&lt;!&ndash;                <LinearLayout&ndash;&gt;-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:padding="16dp">-->
+
+<!--                    &lt;!&ndash;                    <TextView&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        android:layout_width="0dp"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        android:layout_weight="1"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        android:fontFamily="@font/inter_semi_bold"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        android:text="Rota Durağı İlerlemesi"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        android:textColor="@color/text_primary"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        android:textSize="14sp" />&ndash;&gt;-->
+
+<!--                    &lt;!&ndash; Ziyaret edilen / toplam durak sayısı &ndash;&gt;-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/tvProgressText"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/inter_bold"-->
+<!--                        android:textColor="@color/accent_orange"-->
+<!--                        android:textSize="14sp"-->
+<!--                        tools:text="1 / 3" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                &lt;!&ndash; İlerleme çubuğu &ndash;&gt;-->
+<!--                <com.google.android.material.progressindicator.LinearProgressIndicator-->
+<!--                    android:id="@+id/progressStops"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginHorizontal="16dp"-->
+<!--                    android:layout_marginBottom="12dp"-->
+<!--                    app:indicatorColor="@color/accent_orange"-->
+<!--                    app:trackColor="@color/stroke_subtle"-->
+<!--                    app:trackCornerRadius="4dp"-->
+<!--                    tools:progress="33" />-->
+
+<!--            </com.google.android.material.card.MaterialCardView>-->
+
+            <!-- ── Duraklar Başlığı ──────────────────────────────── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="Rota Durakları"
+                android:textColor="@color/text_primary"
+                android:textSize="17sp" />
+
+            <!-- ── Boş Durum Görünümü ────────────────────────────── -->
+            <LinearLayout
+                android:id="@+id/layoutNoStops"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🗺️"
+                    android:textSize="48sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/inter_semi_bold"
+                    android:gravity="center"
+                    android:text="Henüz durak eklenmedi."
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp" />
+
+
+
+            </LinearLayout>
+
+            <!-- ── Durak Listesi RecyclerView ────────────────────── -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvStops"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:paddingBottom="8dp"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_trip_stop" />
+
+            <!-- Harita Kartı -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardMap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/bg_card"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="4dp"
+                app:strokeColor="@color/stroke_subtle"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="Harita"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <org.osmdroid.views.MapView
+                        android:id="@+id/mapView"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:clickable="true" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <!-- ── Alt Sabit Butonlar ────────────────────────────────────── -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/bg_primary"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEditTrip"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingVertical="12dp"
+            android:text="Geziyi Düzenle"
+            android:textColor="@color/accent_orange"
+            app:strokeColor="@color/accent_orange"
+            app:cornerRadius="16dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCompleteTrip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="14dp"
+            android:text="Geziyi Tamamla"
+            android:textColor="@color/bg_primary"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:backgroundTint="@color/accent_orange"
+            app:cornerRadius="16dp" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

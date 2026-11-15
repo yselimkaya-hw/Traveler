@@ -1,0 +1,16 @@
+// ============================================================
+// build.gradle (Project level)
+// Proje genelindeki plugin ve bağımlılık sürümlerini tanımlar.
+// Her modülün kendi app/build.gradle dosyası bu dosyaya bağlıdır.
+// ============================================================
+
+// Top-level build file: modüllere özel yapılandırmaları buraya koyma,
+// onlar kendi build.gradle dosyalarında yapılandırılır.
+plugins {
+    // Versiyonu 8.3.2 veya projenin desteklediği en güncel 8.x sürümüne çek
+    id 'com.android.application' version '8.3.2' apply false
+    id 'com.android.library' version '8.3.2' apply false
+    id 'org.jetbrains.kotlin.android' version '1.9.20' apply false
+}
+
+

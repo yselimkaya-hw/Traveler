@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    inter_regular.xml
+    Google Fonts'tan indirilen Inter Regular font dosyasına referans verir.
+    Gerçek .ttf dosyaları res/font/ klasörüne eklenmelidir.
+    Android Studio → res → New → Font Resource File ile de oluşturulabilir.
+
+    NOT: Eğer fiziksel font dosyalarınız yoksa bu XML'leri silin ve
+    themes.xml'de fontFamily değerlerini "sans-serif" olarak bırakın.
+    Google Fonts entegrasyonu için build.gradle'a aşağıdakini ekleyin:
+      implementation "androidx.core:core:1.12.0"
+-->
+<font-family xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:fontProviderAuthority="com.google.android.gms.fonts"
+    app:fontProviderPackage="com.google.android.gms"
+    app:fontProviderQuery="Inter"
+    app:fontProviderCerts="@array/com_google_android_gms_fonts_certs">
+</font-family>

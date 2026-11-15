@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- inter_bold.xml — Inter Bold (weight 700) Google Fonts referansı -->
+<font-family xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:fontProviderAuthority="com.google.android.gms.fonts"
+    app:fontProviderPackage="com.google.android.gms"
+    app:fontProviderQuery="Inter:wght@700"
+    app:fontProviderCerts="@array/com_google_android_gms_fonts_certs">
+</font-family>

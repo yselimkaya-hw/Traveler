@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.traveler.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.traveler.app"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // ViewBinding'i etkinleştiriyoruz
+    buildFeatures {
+        viewBinding true
+    }
+
+
+        defaultConfig {
+            // local.properties içindeki anahtarı okur
+            Properties properties = new Properties()
+            properties.load(project.rootProject.file('local.properties').newDataInputStream())
+            buildConfigField "String", "GEMINI_API_KEY", "\"${properties.getProperty('GEMINI_API_KEY')}\""
+        }
+        buildFeatures {
+            buildConfig true // BuildConfig sınıfının oluşturulmasını sağlar
+        }
+
+}
+
+dependencies {
+    // Material Design 3
+    implementation 'com.google.android.material:material:1.11.0'
+
+    // Navigation Component (Single Activity + Fragment yapısı için)
+    implementation 'androidx.navigation:navigation-fragment:2.7.6'
+    implementation 'androidx.navigation:navigation-ui:2.7.6'
+
+    // ViewModel ve LiveData (MVVM mimarisi için)
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.7.0'
+
+    // RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+
+    // CardView
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // AppCompat
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+
+    // ConstraintLayout
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // OkHttp (Gemini API çağrıları için - mock yapısında kullanılacak)
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+
+    // JSON işleme
+    implementation 'org.json:json:20231013'
+
+
+    // OSMDroid - açık kaynak harita
+    implementation 'org.osmdroid:osmdroid-android:6.1.18'
+}

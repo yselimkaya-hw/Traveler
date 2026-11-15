@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- switch_track_selector.xml: Dark mode switch'inin track rengi.
+     Aktifken turuncu, pasifken gri görünür. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="#66FF9F1C" android:state_checked="true" />
+    <item android:color="#554A5568" />
+</selector>

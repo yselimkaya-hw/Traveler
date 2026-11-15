@@ -1,0 +1,41 @@
+// ============================================================
+// settings.gradle
+// Proje adını ve dahil edilen modülleri tanımlar.
+// Gradle, projeyi build etmeden önce bu dosyayı okur.
+// ============================================================
+
+pluginManagement {
+    repositories {
+        // Android Gradle Plugin için Google Maven deposu
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        // Diğer Gradle plugin'leri için Maven Central
+        mavenCentral()
+        // Gradle'ın resmi plugin portalı
+        gradlePluginPortal()
+    }
+}
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
+}
+
+dependencyResolutionManagement {
+    // Modüllerin kendi repository tanımlamalarını engelle (merkezi yönetim)
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// Proje kök adı — Android Studio'da görünen isim
+rootProject.name = "TravelerApp"
+
+// Uygulamanın bulunduğu modülü dahil et
+include ':app'
+

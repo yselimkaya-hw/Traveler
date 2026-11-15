@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    themes.xml - Traveler Uygulaması Tema Tanımlamaları
+    
+    Material Design 3 kullanılarak tamamen koyu tema (Dark Mode) oluşturulmuştur.
+    Tüm Material bileşenler (Button, Card, TextField, Switch...) bu tema
+    üzerinden otomatik olarak doğru renklerle görüntülenir.
+-->
+<resources>
+
+    <!--
+        Ana tema: Material3 DayNight tabanlı
+        DayNight: Sistem temasına göre değişebilir, ama biz zorla dark kullanacağız
+    -->
+    <style name="Theme.Traveler" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Birincil renkler (buton, switch, vurgu) -->
+        <item name="colorPrimary">@color/accent_orange</item>
+        <item name="colorPrimaryVariant">@color/accent_orange_dark</item>
+        <item name="colorOnPrimary">@color/bg_primary</item>
+
+        <!-- İkincil renkler -->
+        <item name="colorSecondary">@color/accent_blue</item>
+        <item name="colorOnSecondary">@color/bg_primary</item>
+
+        <!-- Arka plan renkleri -->
+        <item name="android:colorBackground">@color/bg_primary</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+
+        <!-- Yüzey renkleri (card, bottom sheet vb.) -->
+        <item name="colorSurface">@color/bg_card</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/bg_elevated</item>
+
+        <!-- Hata rengi -->
+        <item name="colorError">@color/status_error</item>
+
+        <!-- Status bar rengi (telefon üst bar) -->
+        <item name="android:statusBarColor">@color/bg_primary</item>
+
+        <!-- Navigation bar rengi (telefon alt bar) -->
+        <item name="android:navigationBarColor">@color/bg_primary</item>
+
+        <!-- Status bar ikonları koyu ekranda açık renk olmalı -->
+        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+
+        <!-- Window arka planı -->
+        <item name="android:windowBackground">@color/bg_primary</item>
+
+        <!-- Toolbar varsayılan stili -->
+        <item name="toolbarStyle">@style/Widget.Traveler.Toolbar</item>
+
+        <!-- MaterialCardView varsayılan stili -->
+        <item name="materialCardViewStyle">@style/Widget.Traveler.Card</item>
+
+        <!-- TextField (EditText) stili -->
+        <item name="textInputStyle">@style/Widget.Traveler.TextInput</item>
+
+    </style>
+
+    <!-- ===== BİLEŞEN STİLLERİ ===== -->
+
+    <!-- Toolbar stili -->
+    <style name="Widget.Traveler.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/bg_primary</item>
+        <item name="titleTextColor">@color/text_primary</item>
+    </style>
+
+    <!-- Kart stili -->
+    <style name="Widget.Traveler.Card" parent="Widget.Material3.CardView.Outlined">
+        <item name="cardBackgroundColor">@color/bg_card</item>
+        <item name="strokeColor">@color/card_stroke</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <!-- Metin girdi alanı stili -->
+    <style name="Widget.Traveler.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/bg_elevated</item>
+        <item name="boxStrokeColor">@color/card_stroke</item>
+        <item name="hintTextColor">@color/text_hint</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+
+    <!-- Primary buton stili -->
+    <style name="Widget.Traveler.Button.Primary" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/accent_orange</item>
+        <item name="android:textColor">@color/bg_primary</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Outlined buton stili -->
+    <style name="Widget.Traveler.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/accent_orange</item>
+        <item name="android:textColor">@color/accent_orange</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+    <!-- AlertDialog stili -->
+    <style name="Widget.Traveler.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="android:background">@color/bg_elevated</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="colorPrimary">@color/accent_orange</item>
+    </style>
+
+    <!-- Onboarding ekranı için özel başlık stili -->
+    <style name="TextAppearance.Traveler.OnboardingTitle">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <!-- Kart içi başlık stili -->
+    <style name="TextAppearance.Traveler.CardTitle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <!-- İkincil metin stili -->
+    <style name="TextAppearance.Traveler.Body">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:lineSpacingMultiplier">1.4</item>
+    </style>
+
+    <style name="TextAppearance.Traveler" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <!-- Buraya kendi istediğin yazı tipi veya renk ayarlarını ekleyebilirsin -->
+    </style>
+
+</resources>
