@@ -13,5 +13,3 @@ Uygulamada yapay zekâ destekli rota önerileri, gerçek koordinatlarla harita g
 
 Kullanılan Teknolojiler:
 Java, XML, SQLite, SharedPreferences, MVVM, ViewBinding, Navigation Component, RecyclerView, OSMDroid, Gemini AI
-
-- Android Bitirme Projesi, 2026.
